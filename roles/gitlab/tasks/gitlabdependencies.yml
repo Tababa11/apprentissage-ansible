@@ -1,0 +1,7 @@
+- name: Install gitlab dependencies
+  apt:
+    name: "{{ dependency }}"
+    state: present
+  shell: /etc/ansible/roles/gitlab/files/script.deb.sh
+    args:
+      cmd: /bin/bash

@@ -1,0 +1,27 @@
+- hosts: student
+  become: true
+  become_user: student
+  roles:
+  - role: apache
+    vars:
+      dependency: 
+        - apache2
+  - role: gitlab
+    vars:
+      dependency:
+      - curl
+      - openssh-server
+      - ca-certificates
+      - postfix
+  - role: gitlabconfig
+    vars:
+      replacement:
+        - regex: "^external_url.*"
+          line: "external_url = 'http://gitlab.student.local'"
+        - regex: "# nginx\\['listen_add.*"
+          line: "nginx['listen_addresses'] = ['localhost']"
+        - regex: "# nginx\\['listen_port.*"
+          line: "nginx['listen_port'] = 8888"
+        - regex: "# nginx\\['listen_https"
+          line: "nginx['listen_https'] = false"
+
