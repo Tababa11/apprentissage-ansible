@@ -1,4 +1,4 @@
 - name: execute gitlab install script  
-  shell: /etc/ansible/roles/gitlab/files/script.deb.sh
+- shell: /etc/ansible/roles/gitlab/files/script.deb.sh
     args:
       cmd: /bin/bash
