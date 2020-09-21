@@ -1,4 +1,2 @@
-- name: test
-  import_tasks:
-  - gitlabdependencies.yml
-  - gitlabscript.yml
+- import_tasks: gitlabdependencies.yml
+- import_tasks: gitlabscript.yml

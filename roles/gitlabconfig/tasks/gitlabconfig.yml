@@ -1,6 +1,6 @@
 - name: config gitlab config
-    lineinfile:
-      path: /etc/gitlab/gitlab.rb
-      regexp: "{{ item.regex }}"
-      line: "{{ item.line }}"
-    loop: "{{ replacement }}"
+  lineinfile:
+    path: /etc/gitlab/gitlab.rb
+    regexp: "{{ item.regex }}"
+    line: "{{ item.line }}"
+  loop: "{{ replacement }}"

@@ -1,6 +1,5 @@
 - hosts: student
   become: true
-  become_user: student
   roles:
   - role: apache
     vars:
